@@ -10,7 +10,7 @@ namespace aula196_interfaces2.Entities
         public DateTime Date { get; private set; }
         public double TotalValue { get; private set; }
 
-        public List<Installment> Instalments { get; private set; }  = new List<Installment>();
+        public List<Installment> Installments { get; private set; } = new List<Installment>();
         public Contract(int number, DateTime date, double totalValue)
         {
             Number = number;
@@ -22,4 +22,5 @@ namespace aula196_interfaces2.Entities
         {
             Installments.Add(installment);
         }
+    }
 }

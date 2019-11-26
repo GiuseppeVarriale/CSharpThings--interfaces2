@@ -1,5 +1,6 @@
 ﻿using System;
 using aula196_interfaces2.Entities;
+
 namespace aula196_interfaces2.Services
 {
     class ContractService
@@ -13,9 +14,9 @@ namespace aula196_interfaces2.Services
 
         public void ProcessContracts(Contract contract, int months)
         {
-            for (int i = 1; i >= months; i++)
+            double basicQuota = contract.TotalValue / 3;
+            for (int i = 1; i <= months; i++)
             {
-                double basicQuota = contract.TotalValue / 3;
                 DateTime date = contract.Date.AddMonths(i);
                 double updatedQuota = basicQuota + _onlinePaymentService.Interest(basicQuota, i);
                 double fullQuota = updatedQuota + _onlinePaymentService.PaymentFee(updatedQuota);
