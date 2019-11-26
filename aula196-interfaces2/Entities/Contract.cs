@@ -17,5 +17,9 @@ namespace aula196_interfaces2.Entities
             Date = date;
             TotalValue = totalValue;
         }
-    }
+
+        public void AddInstallment(Installment installment)
+        {
+            Installments.Add(installment);
+        }
 }
